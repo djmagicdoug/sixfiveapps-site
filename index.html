@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Six Five Apps | Digital Business Cards That Keep the Follow-Up Alive</title>
+  <meta name="description" content="Six Five Apps creates digital business cards for local pros, solo operators, and small businesses. Share one clean card with contact buttons, booking links, demos, media, and more." />
+
+  <style>
+    :root{
+      --bg:#071117;
+      --bg2:#0F2C3A;
+      --panel:rgba(244,247,246,.06);
+      --panel2:rgba(244,247,246,.09);
+      --border:rgba(244,247,246,.13);
+      --text:#F4F7F6;
+      --muted:rgba(244,247,246,.76);
+      --muted2:rgba(244,247,246,.56);
+      --accent:#7EF0C3;
+      --accent2:#6EA8FE;
+      --darkAccent:#1F3A43;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1100px 650px at 18% 8%, rgba(126,240,195,.13), transparent 55%),
+        radial-gradient(950px 620px at 82% 12%, rgba(110,168,254,.13), transparent 55%),
+        linear-gradient(180deg, #071117 0%, #0B1820 48%, #071117 100%);
+      color:var(--text);
+    }
+
+    a{
+      color:inherit;
+    }
+
+    a:focus-visible,
+    .btn:focus-visible{
+      outline:3px solid rgba(126,240,195,.8);
+      outline-offset:3px;
+    }
+
+    .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:22px 18px 64px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:10px 2px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.2px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .logo{
+      width:34px;
+      height:34px;
+      border-radius:11px;
+      border:1px solid rgba(244,247,246,.18);
+      background:
+        linear-gradient(135deg, rgba(126,240,195,.92), rgba(31,58,67,.98));
+      box-shadow:var(--shadow);
+    }
+
+    .navlinks{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .navlinks a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .navlinks a:hover{
+      color:var(--text);
+    }
+
+    .hero{
+      padding:46px 2px 20px;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    @media (max-width:900px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .panel{
+      border:1px solid var(--border);
+      background:var(--panel);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+    }
+
+    .heroMain{
+      padding:30px;
+    }
+
+    @media (max-width:520px){
+      .heroMain{
+        padding:24px;
+      }
+    }
+
+    .heroMedia{
+      padding:22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:5px 11px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(244,247,246,.05);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:850;
+      letter-spacing:.2px;
+    }
+
+    h1{
+      margin:14px 0 12px;
+      font-size:46px;
+      line-height:1.04;
+      letter-spacing:-1px;
+    }
+
+    @media (max-width:520px){
+      h1{
+        font-size:36px;
+      }
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+
+    h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+
+    p{
+      margin:0;
+    }
+
+    .sub{
+      color:var(--muted);
+      line-height:1.55;
+      font-size:16px;
+      max-width:720px;
+    }
+
+    .pillrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:18px 0 20px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:750;
+      background:rgba(244,247,246,.04);
+    }
+
+    .btnrow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(244,247,246,.07);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:850;
+      letter-spacing:.1px;
+      min-height:46px;
+    }
+
+    .btn:hover{
+      background:rgba(244,247,246,.11);
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(126,240,195,.95), rgba(110,168,254,.85));
+      border:0;
+      color:#061016;
+    }
+
+    .fine{
+      margin-top:12px;
+      color:var(--muted2);
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    .imageFrame{
+      width:100%;
+      border:1px solid var(--border);
+      background:rgba(244,247,246,.04);
+      border-radius:16px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .imageFrame img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:12px;
+    }
+
+    .imageLabel{
+      margin-top:10px;
+      color:var(--muted2);
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .section{
+      margin-top:18px;
+    }
+
+    .sectionPad{
+      padding:22px;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    @media (max-width:900px){
+      .grid3{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .twocol{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    @media (max-width:900px){
+      .twocol{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .card{
+      border:1px solid var(--border);
+      background:rgba(244,247,246,.045);
+      border-radius:16px;
+      padding:16px;
+    }
+
+    .card p{
+      color:var(--muted);
+      line-height:1.45;
+      font-size:14px;
+    }
+
+    .problemCard{
+      min-height:155px;
+    }
+
+    .demoCard{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:172px;
+    }
+
+    .demoCard .small{
+      color:var(--muted2);
+      font-size:13px;
+      line-height:1.45;
+      margin-top:6px;
+    }
+
+    .demoCard a{
+      margin-top:14px;
+      font-size:14px;
+      font-weight:850;
+      text-decoration:none;
+      color:var(--accent);
+    }
+
+    .screenSection{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:center;
+    }
+
+    @media (max-width:900px){
+      .screenSection{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .num{
+      width:30px;
+      height:30px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      background:rgba(244,247,246,.08);
+      border:1px solid var(--border);
+      margin-bottom:10px;
+    }
+
+    .price{
+      font-size:36px;
+      font-weight:950;
+      letter-spacing:-.8px;
+      margin:8px 0 6px;
+    }
+
+    .price span{
+      font-size:16px;
+      font-weight:800;
+      color:var(--muted);
+    }
+
+    .muted{
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .list{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:9px;
+    }
+
+    .list li{
+      color:var(--muted);
+      line-height:1.45;
+      font-size:14px;
+    }
+
+    .list li::before{
+      content:"•";
+      color:var(--accent);
+      font-weight:900;
+      margin-right:8px;
+    }
+
+    .dropdownPlaceholder{
+      border:1px dashed rgba(126,240,195,.45);
+      background:rgba(126,240,195,.06);
+      border-radius:16px;
+      padding:18px;
+    }
+
+    .dropdownPlaceholder strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .notice{
+      border:1px solid rgba(126,240,195,.25);
+      background:rgba(126,240,195,.07);
+      border-radius:16px;
+      padding:16px;
+    }
+
+    .hr{
+      height:1px;
+      background:rgba(244,247,246,.10);
+      margin:18px 0;
+    }
+
+    footer{
+      margin-top:22px;
+      padding:18px 6px;
+      color:var(--muted2);
+      font-size:13px;
+    }
+
+    footer a{
+      color:var(--muted2);
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      color:var(--text);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="nav">
+      <a class="brand" href="#">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Six Five Apps</span>
+      </a>
+
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#demos">Demos</a>
+        <a href="#included">What’s included</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#menu15">Menu15</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="panel heroMain">
+          <span class="tag">Digital business cards for local pros and small businesses</span>
+
+          <h1>Your paper card introduces you. Your digital card keeps the conversation going.</h1>
+
+          <p class="sub">
+            Most follow-ups get lost because people leave with a card, a number, or a social handle they never use.
+            Six Five Apps gives you one clean digital card they can tap, scan, save, and share.
+          </p>
+
+          <div class="pillrow" aria-label="Key benefits">
+            <span class="pill">Share by QR, tap, text, or link</span>
+            <span class="pill">Show more than contact info</span>
+            <span class="pill">Update anytime</span>
+            <span class="pill">No app download needed</span>
+          </div>
+
+          <div class="btnrow">
+            <a class="btn primary" href="#demos">View Live Demos</a>
+            <a class="btn" href="[DEMO_SCHEDULING_LINK]">Schedule a Demo</a>
+            <a class="btn" href="#pricing">Start My Card</a>
+          </div>
+
+          <div class="fine">
+            Plans start at <strong>$7.50/month</strong> or <strong>$75/year</strong>. Optional setup available.
+          </div>
+        </div>
+
+        <div class="panel heroMedia">
+          <div class="imageFrame">
+            <img src="[THREE_CARD_MOCKUP_IMAGE]" alt="Three digital business cards shown in a fanned-out mockup" />
+            <div class="imageLabel">
+              Replace this with your three-card fan mockup.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM / OUTCOME STRIP -->
+      <section class="section grid3">
+        <div class="card problemCard">
+          <h3>Stop handing people a dead end</h3>
+          <p>
+            A paper card can only hold so much. Your digital card gives people a clear next step:
+            call, text, book, view, follow, or save.
+          </p>
+        </div>
+
+        <div class="card problemCard">
+          <h3>Make follow-up easier</h3>
+          <p>
+            When someone asks for your info, send one link instead of five separate links.
+            Less friction means more people actually take action.
+          </p>
+        </div>
+
+        <div class="card problemCard">
+          <h3>Look ready when opportunity shows up</h3>
+          <p>
+            Your card can show your work, reviews, services, media, and resources in one place.
+            That helps people trust you faster.
+          </p>
+        </div>
+      </section>
+
+      <!-- DEMOS -->
+      <section id="demos" class="section panel sectionPad">
+        <div class="twocol" style="align-items:end;">
+          <div>
+            <span class="tag">Live examples</span>
+            <h2 style="margin-top:10px;">See the card before you buy one.</h2>
+            <p class="muted">
+              Look through the demos and picture what your own card could include.
+              Each example shows a different way to use pages, links, booking, media, and calls to action.
+            </p>
+          </div>
+
+          <div class="btnrow" style="justify-content:flex-end;">
+            <a class="btn primary" href="[ALL_DEMOS_LINK]">View All Demos</a>
+            <a class="btn" href="[DEMO_SCHEDULING_LINK]">Schedule a Demo</a>
+          </div>
+        </div>
+
+        <div class="grid3" style="margin-top:16px;">
+          <div class="card demoCard">
+            <div>
+              <h3>Real estate demo</h3>
+              <p>Show listings, reviews, booking links, lead forms, and buyer/seller resources.</p>
+              <p class="small">Good fit for agents, brokers, lenders, and referral partners.</p>
+            </div>
+            <a href="[REAL_ESTATE_DEMO_LINK]" target="_blank" rel="noopener">Open demo →</a>
+          </div>
+
+          <div class="card demoCard">
+            <div>
+              <h3>Hair & beauty demo</h3>
+              <p>Show booking, services, social links, portfolio photos, location, and pricing notes.</p>
+              <p class="small">Good fit for stylists, barbers, nail techs, estheticians, and salons.</p>
+            </div>
+            <a href="[BEAUTY_DEMO_LINK]" target="_blank" rel="noopener">Open demo →</a>
+          </div>
+
+          <div class="card demoCard">
+            <div>
+              <h3>Fitness demo</h3>
+              <p>Share classes, booking, intro offers, videos, testimonials, and training options.</p>
+              <p class="small">Good fit for trainers, instructors, coaches, gyms, and wellness pros.</p>
+            </div>
+            <a href="[FITNESS_DEMO_LINK]" target="_blank" rel="noopener">Open demo →</a>
+          </div>
+        </div>
+
+        <div class="fine">
+          You can start with one page and add more later.
+        </div>
+      </section>
+
+      <!-- MULTI-SCREEN MOCKUP -->
+      <section class="section panel sectionPad">
+        <div class="screenSection">
+          <div>
+            <span class="tag">One link, clean everywhere</span>
+            <h2 style="margin-top:10px;">Built for phones, but still clean on larger screens.</h2>
+
+            <p class="muted">
+              Most people will open your card on a phone. But the same link can also work in email signatures,
+              websites, QR signs, social bios, laptops, and tablets.
+            </p>
+
+            <ul class="list">
+              <li>Mobile-first layout for quick scanning</li>
+              <li>Clean enough to share in professional settings</li>
+              <li>One link for text, email, QR, social profiles, and NFC cards</li>
+            </ul>
+
+            <div class="btnrow" style="margin-top:16px;">
+              <a class="btn primary" href="#demos">View Live Demos</a>
+              <a class="btn" href="[DEMO_SCHEDULING_LINK]">Schedule a Demo</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="imageFrame">
+              <img src="[FOUR_SCREEN_MOCKUP_IMAGE]" alt="Digital business card shown on phone, tablet, laptop, and desktop screens" />
+              <div class="imageLabel">
+                Replace this with your phone, tablet, laptop, and desktop mockup.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT'S INCLUDED / DROPDOWN PLACEHOLDER -->
+      <section id="included" class="section panel sectionPad">
+        <div class="twocol" style="align-items:start;">
+          <div>
+            <span class="tag">What can go on the card?</span>
+            <h2 style="margin-top:10px;">More than a link page. Less hassle than a full website.</h2>
+            <p class="muted">
+              Your card can stay simple or grow into a small mobile site. Add the pieces that help people understand
+              who you are, what you offer, and how to take the next step.
+            </p>
+          </div>
+
+          <div class="dropdownPlaceholder">
+            <strong>Dropdown widget placeholder</strong>
+            <p class="muted">
+              Add your Carrd dropdown widget here. Suggested title: “What’s included in a digital card?”
+              Use it for contact buttons, booking links, photos, videos, reviews, documents, maps, forms,
+              social links, payment links, and extra pages.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how" class="section panel sectionPad">
+        <span class="tag">Simple setup</span>
+        <h2 style="margin-top:10px;">How it works</h2>
+
+        <div class="grid3" style="margin-top:14px;">
+          <div class="card">
+            <div class="num">1</div>
+            <h3>Choose your starting point</h3>
+            <p>
+              View the demos, pick the style closest to your business, or schedule a quick demo with me.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="num">2</div>
+            <h3>Send your content</h3>
+            <p>
+              Send your photo or logo, contact info, links, booking page, and anything else you want included.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="num">3</div>
+            <h3>Start sharing your card</h3>
+            <p>
+              Use it in person, by text, in your bio, in email signatures, on printed material, or with QR/NFC.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="section twocol">
+        <div class="panel sectionPad">
+          <span class="tag">Card subscription</span>
+          <h2 style="margin-top:10px;">Start your digital card</h2>
+          <p class="muted">
+            Keep your card live, shareable, and easy to update.
+          </p>
+
+          <div class="price">$7.50<span>/month</span></div>
+          <p class="muted"><strong>Cancel anytime.</strong></p>
+
+          <div class="hr"></div>
+
+          <div class="price">$75<span>/year</span></div>
+          <ul class="list">
+            <li>Annual plan includes a pre-programmed NFC card</li>
+            <li>Use your card link anywhere</li>
+            <li>Update your info when things change</li>
+          </ul>
+
+          <div class="btnrow">
+            <a class="btn primary" href="[MONTHLY_CHECKOUT_LINK]">Start Monthly</a>
+            <a class="btn" href="[ANNUAL_CHECKOUT_LINK]">Start Annual</a>
+          </div>
+
+          <div class="fine">
+            Replace these buttons with your Stripe checkout links.
+          </div>
+        </div>
+
+        <div class="panel sectionPad">
+          <span class="tag">Optional setup</span>
+          <h2 style="margin-top:10px;">Want it built for you?</h2>
+          <p class="muted">
+            If you would rather not build it yourself, I can set up the first version for you.
+          </p>
+
+          <div class="price">$29 <span>one-time</span></div>
+
+          <ul class="list">
+            <li>Up to 3 pages once your content is provided</li>
+            <li>Mobile-first layout</li>
+            <li>Basic revisions included</li>
+            <li>Good option if you want a clean card without learning the builder</li>
+          </ul>
+
+          <div class="btnrow">
+            <a class="btn primary" href="[SETUP_CHECKOUT_OR_REQUEST_LINK]">Add Setup</a>
+            <a class="btn" href="[DEMO_SCHEDULING_LINK]">Schedule a Demo</a>
+          </div>
+
+          <div class="fine">
+            Most people should start simple. You can add more once you know what people ask for.
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="section panel sectionPad">
+        <div class="twocol" style="align-items:center;">
+          <div>
+            <span class="tag">Ready when someone asks for your info</span>
+            <h2 style="margin-top:10px;">Make your next introduction easier to follow up on.</h2>
+            <p class="muted">
+              You do not need a huge website to look prepared. You need one clean card that tells people what to do next.
+            </p>
+          </div>
+
+          <div class="btnrow" style="justify-content:flex-end;">
+            <a class="btn primary" href="#demos">View Live Demos</a>
+            <a class="btn" href="#pricing">Start My Card</a>
+            <a class="btn" href="[DEMO_SCHEDULING_LINK]">Schedule a Demo</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- MENU15 -->
+      <section id="menu15" class="section panel sectionPad">
+        <div class="twocol" style="align-items:center;">
+          <div>
+            <span class="tag">For restaurant owners</span>
+            <h2 style="margin-top:10px;">Also building: Menu15</h2>
+            <p class="muted">
+              Menu15 is a local menu project for helping nearby residents find restaurant menus by area.
+              It is still being built, but restaurant owners can learn more or ask about early access.
+            </p>
+          </div>
+
+          <div class="btnrow" style="justify-content:flex-end;">
+            <a class="btn primary" href="/menu15">Learn About Menu15</a>
+            <a class="btn" href="[MENU15_DEMO_OR_WAITLIST_LINK]">Restaurant Interest</a>
+          </div>
+        </div>
+
+        <div class="fine">
+          This section keeps Menu15 visible without pulling attention away from the digital card offer.
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="hr"></div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;">
+        <div>© <span id="y"></span> Six Five Apps. All rights reserved.</div>
+
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="[PRIVACY_LINK]">Privacy</a>
+          <a href="[TERMS_LINK]">Terms</a>
+          <a href="mailto:[YOUR_EMAIL]">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
