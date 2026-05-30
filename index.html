@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>65 Apps | Digital Hubs for Restaurants & Home Services</title>
+  <meta name="description" content="65 Apps builds managed digital hubs that help restaurants and home service businesses get found, get contacted, and get booked." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #252D3D;
+      --navy-mid: #2D3748;
+      --navy-light: rgba(37,45,61,0.06);
+      --navy-soft: rgba(37,45,61,0.04);
+      --gold: #B8924A;
+      --gold-light: rgba(184,146,74,0.12);
+      --gold-mid: rgba(184,146,74,0.25);
+      --white: #ffffff;
+      --off: #F9F7F4;
+      --off2: #F2EFE9;
+      --ink: #1A1F2E;
+      --muted: #6B7280;
+      --subtle: #9CA3AF;
+      --line: rgba(37,45,61,0.09);
+      --restaurant: #1F3A43;
+      --restaurant-soft: rgba(31,58,67,0.07);
+      --homeservice: #336EBD;
+      --homeservice-soft: rgba(51,110,189,0.07);
+      --radius-sm: 10px;
+      --radius: 18px;
+      --radius-lg: 28px;
+      --shadow-sm: 0 2px 12px rgba(37,45,61,0.07);
+      --shadow: 0 12px 40px rgba(37,45,61,0.10);
+      --shadow-lg: 0 28px 70px rgba(37,45,61,0.14);
+      --max: 1100px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Outfit', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 13px 26px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(37,45,61,0.22);
+    }
+    .btn.primary:hover { box-shadow: 0 12px 30px rgba(37,45,61,0.28); }
+    .btn.gold {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(184,146,74,0.28);
+    }
+    .btn.gold:hover { box-shadow: 0 12px 30px rgba(184,146,74,0.36); }
+    .btn.outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: rgba(37,45,61,0.22);
+    }
+    .btn.outline:hover { border-color: var(--navy); background: var(--navy-light); }
+    .btn.ghost {
+      background: transparent;
+      color: var(--navy);
+      padding-inline: 0;
+      font-weight: 700;
+    }
+    .btn.ghost:hover { opacity: 0.65; transform: translateX(3px); }
+    .btn.white {
+      background: #fff;
+      color: var(--navy);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .btn.white:hover { box-shadow: 0 8px 22px rgba(0,0,0,0.18); }
+
+    /* ── NAV ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-img {
+      height: 36px;
+      width: auto;
+    }
+    .logo-text {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-mobile-btn { display: none; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 72px;
+      background: var(--off);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(184,146,74,0.04) 100%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-mid);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 4.8vw, 62px);
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--muted);
+      margin-top: 18px;
+      line-height: 1.7;
+      font-weight: 400;
+      max-width: 480px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .hero-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--subtle);
+      font-weight: 500;
+    }
+
+    /* hero visual */
+    .hero-visual {
+      position: relative;
+      height: 460px;
+    }
+    .hub-card {
+      position: absolute;
+      width: 230px;
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .hub-card.c1 {
+      top: 0; left: 20px;
+      transform: rotate(-4deg);
+      z-index: 1;
+    }
+    .hub-card.c2 {
+      top: 30px; right: 0;
+      transform: rotate(3deg);
+      z-index: 3;
+    }
+    .hub-card.c3 {
+      bottom: 0; left: 60px;
+      transform: rotate(1deg);
+      z-index: 2;
+    }
+    .hc-header {
+      padding: 14px 14px 12px;
+      color: #fff;
+    }
+    .hc-header.restaurant { background: var(--restaurant); }
+    .hc-header.homeservice { background: var(--homeservice); }
+    .hc-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 4px;
+    }
+    .hc-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.15;
+    }
+    .hc-sub { font-size: 10px; opacity: 0.7; margin-top: 2px; }
+    .hc-tabs {
+      display: flex;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .hc-tab {
+      flex: 1;
+      text-align: center;
+      padding: 8px 4px;
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    .hc-tab.active { border-bottom: 2px solid var(--gold); color: var(--gold); }
+    .hc-body { padding: 10px 12px; background: #F9F7F4; }
+    .hc-btn {
+      height: 30px;
+      border-radius: 7px;
+      background: var(--restaurant);
+      margin-bottom: 8px;
+    }
+    .hc-btn.blue { background: var(--homeservice); }
+    .hc-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 9px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      margin-bottom: 5px;
+    }
+    .hc-dot {
+      width: 18px; height: 18px;
+      border-radius: 5px;
+      background: var(--navy-light);
+      flex-shrink: 0;
+    }
+    .hc-lines { flex: 1; }
+    .hc-line {
+      height: 7px;
+      border-radius: 4px;
+      background: rgba(37,45,61,0.1);
+      margin-bottom: 3px;
+    }
+    .hc-line.s { width: 55%; margin-bottom: 0; }
+    .hc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    .hc-tag {
+      font-size: 8px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--navy);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 80px 0; }
+    .section-header { max-width: 640px; }
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.6vw, 48px);
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 14px;
+      line-height: 1.7;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    .who { background: var(--white); }
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .who-card {
+      border-radius: var(--radius);
+      padding: 32px;
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .who-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .who-card.restaurant {
+      background: linear-gradient(135deg, #1F3A43 0%, #2d5260 100%);
+      border-color: transparent;
+    }
+    .who-card.homeservice {
+      background: linear-gradient(135deg, #336EBD 0%, #2a5a9e 100%);
+      border-color: transparent;
+    }
+    .who-card-emoji {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .who-card h3 {
+      font-family: var(--serif);
+      font-size: 28px;
+      color: #fff;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .who-card-sub {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .who-card p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .who-card .who-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .who-features li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .who-features li::before {
+      content: '✓';
+      font-weight: 900;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── WHAT'S INSIDE (feature detail) ── */
+    .inside { background: var(--off); border-block: 1px solid var(--line); }
+    .inside-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .inside-tab {
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 2px solid var(--line);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      background: var(--white);
+    }
+    .inside-tab.active.restaurant {
+      background: var(--restaurant);
+      color: #fff;
+      border-color: var(--restaurant);
+    }
+    .inside-tab.active.homeservice {
+      background: var(--homeservice);
+      color: #fff;
+      border-color: var(--homeservice);
+    }
+    .inside-tab:hover:not(.active) { border-color: var(--navy); color: var(--navy); }
+    .inside-panels { position: relative; }
+    .inside-panel { display: none; }
+    .inside-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .pages-list { display: flex; flex-direction: column; gap: 14px; }
+    .page-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      border: 1px solid var(--line);
+      transition: box-shadow 0.18s ease;
+    }
+    .page-item:hover { box-shadow: var(--shadow-sm); }
+    .page-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .page-info h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .page-info p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .inside-visual {
+      position: sticky;
+      top: 90px;
+    }
+    .mock-device {
+      border-radius: 26px;
+      background: #1a1f2e;
+      padding: 8px;
+      box-shadow: var(--shadow-lg);
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .mock-screen {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #F4F7FB;
+      min-height: 480px;
+    }
+    .mock-screen.restaurant-bg { background: #EBE9E4; }
+    .ms-top {
+      padding: 14px;
+      color: #fff;
+      text-align: center;
+    }
+    .ms-top.restaurant { background: var(--restaurant); }
+    .ms-top.homeservice { background: var(--homeservice); }
+    .ms-top strong { display: block; font-family: var(--serif); font-size: 20px; }
+    .ms-top span { font-size: 11px; opacity: 0.65; }
+    .ms-nav {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .ms-nav span {
+      text-align: center;
+      padding: 9px 4px;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .ms-nav span.active { border-bottom: 2px solid var(--gold); color: var(--gold); }
+    .ms-body { padding: 12px; }
+    .ms-alert {
+      background: rgba(31,58,67,0.08);
+      border: 1px solid rgba(31,58,67,0.12);
+      border-radius: 9px;
+      padding: 9px 11px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--restaurant);
+      margin-bottom: 8px;
+    }
+    .ms-alert.blue {
+      background: rgba(51,110,189,0.08);
+      border-color: rgba(51,110,189,0.12);
+      color: var(--homeservice);
+    }
+    .ms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .ms-action {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 7px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+    }
+    .ms-action.full { grid-column: 1/-1; background: var(--restaurant); color: #fff; }
+    .ms-action.full.blue { background: var(--homeservice); }
+    .ms-tile {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 9px;
+      padding: 10px;
+      margin-bottom: 6px;
+      font-size: 11px;
+      color: var(--navy);
+    }
+    .ms-tile strong { display: block; font-weight: 800; margin-bottom: 2px; font-size: 11px; }
+    .ms-about {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 9px;
+      padding: 10px;
+      margin-bottom: 6px;
+    }
+    .ms-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--homeservice);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .ms-about-lines { flex: 1; }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--white); }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 16px;
+      margin-top: 40px;
+      counter-reset: step;
+    }
+    .step {
+      padding: 24px 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--white);
+      counter-increment: step;
+      position: relative;
+    }
+    .step::before {
+      content: counter(step);
+      display: grid;
+      place-items: center;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .step h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .step p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ── MANAGED SERVICE BAND ── */
+    .managed {
+      background: var(--navy);
+      color: #fff;
+      padding: 64px 0;
+    }
+    .managed-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .managed h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 3.4vw, 44px);
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .managed h2 em { font-style: italic; color: var(--gold); }
+    .managed p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 12px; }
+    .managed-points {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .managed-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+    .managed-point-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .managed-point-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .managed-point-text span { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+    /* ── DEMOS ── */
+    .demos { background: var(--off); border-block: 1px solid var(--line); }
+    .demos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .demo-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .demo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .demo-hero {
+      height: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .demo-hero.restaurant {
+      background: linear-gradient(135deg, #1F3A43 0%, #2d5260 100%);
+    }
+    .demo-hero.homeservice {
+      background: linear-gradient(135deg, #336EBD 0%, #1a4a8a 100%);
+    }
+    .demo-hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .demo-emoji {
+      font-size: 32px;
+      position: absolute;
+      top: 20px; right: 24px;
+      opacity: 0.6;
+    }
+    .demo-pill {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 8px;
+    }
+    .demo-hero h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    .demo-body { padding: 20px 24px 24px; }
+    .demo-body p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .demo-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 22px;
+    }
+    .demo-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .demo-features li span {
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .demo-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .demo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+    .demo-btn:hover { transform: translateY(-2px); }
+    .demo-btn.restaurant-btn {
+      background: var(--restaurant);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(31,58,67,0.22);
+    }
+    .demo-btn.homeservice-btn {
+      background: var(--homeservice);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(51,110,189,0.22);
+    }
+    .demo-btn.restaurant-btn:hover { box-shadow: 0 8px 22px rgba(31,58,67,0.3); }
+    .demo-btn.homeservice-btn:hover { box-shadow: 0 8px 22px rgba(51,110,189,0.3); }
+
+    /* ── PRICING ── */
+    .pricing { background: var(--white); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .price-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: 28px 24px;
+      background: var(--white);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .price-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .price-card.featured {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+    .price-badge {
+      display: inline-flex;
+      width: fit-content;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-mid);
+      margin-bottom: 16px;
+    }
+    .price-card.featured .price-badge {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .price-card h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .price-card.featured h3 { color: #fff; }
+    .price-card > .price-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .price-card.featured .price-tagline { color: rgba(255,255,255,0.6); }
+    .price-amount {
+      font-family: var(--serif);
+      font-size: 44px;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-card.featured .price-amount { color: #fff; }
+    .price-amount sup { font-size: 22px; vertical-align: top; margin-top: 8px; }
+    .price-amount sub { font-size: 16px; font-family: var(--sans); font-weight: 500; color: var(--muted); }
+    .price-card.featured .price-amount sub { color: rgba(255,255,255,0.55); }
+    .price-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .price-card.featured .price-note { color: rgba(255,255,255,0.6); }
+    .price-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 16px 0;
+    }
+    .price-card.featured .price-divider { background: rgba(255,255,255,0.12); }
+    .price-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--ink);
+      margin-bottom: 24px;
+      flex: 1;
+    }
+    .price-card.featured .price-list { color: rgba(255,255,255,0.85); }
+    .price-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+    .price-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    /* ── CTA ── */
+    .cta-section { padding: 72px 0; background: var(--off); border-top: 1px solid var(--line); }
+    .cta-box {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 56px 52px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,146,74,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-box h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 42px);
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .cta-box h2 em { font-style: italic; color: var(--gold); }
+    .cta-box p { font-size: 16px; color: rgba(255,255,255,0.68); line-height: 1.65; }
+    .cta-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; min-width: 200px; }
+    .cta-email {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+    }
+    .cta-email a { color: rgba(255,255,255,0.6); text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 0;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: rgba(255,255,255,0.38);
+    }
+    .footer-logo {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-logo span { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+    .fade-up.d1 { animation-delay: 0.08s; }
+    .fade-up.d2 { animation-delay: 0.18s; }
+    .fade-up.d3 { animation-delay: 0.28s; }
+    .fade-up.d4 { animation-delay: 0.38s; }
+    .fade-up.d5 { animation-delay: 0.48s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-inner, .managed-inner, .cta-box { grid-template-columns: 1fr; }
+      .who-grid, .demos-grid, .pricing-grid, .inside-panel.active { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: repeat(2,1fr); }
+      .hero-visual { height: 360px; order: -1; }
+      .hub-card { width: 190px; }
+      .hub-card.c2 { right: 10px; }
+      .cta-actions { align-items: flex-start; }
+      .cta-box { padding: 36px 28px; }
+      .inside-visual { position: static; }
+      .mock-device { max-width: 260px; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .nav-cta .outline { display: none; }
+      .nav-mobile-btn { display: inline-flex; }
+      section { padding: 60px 0; }
+      .hero { padding: 56px 0 48px; }
+      .hub-card { width: 170px; }
+      .hub-card.c1 { top: 0; left: 0; }
+      .hub-card.c2 { top: 100px; right: 0; }
+      .hub-card.c3 { bottom: 0; left: 30px; }
+      .steps-row { grid-template-columns: 1fr; }
+      .hero-visual { height: 340px; }
+      .cta-box { grid-template-columns: 1fr; padding: 28px 22px; }
+      .cta-actions { align-items: stretch; }
+      .cta-actions .btn { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div style="width:32px;height:32px;background:var(--navy);border-radius:8px;display:grid;place-items:center;flex-shrink:0;">
+            <span style="color:#fff;font-size:11px;font-weight:900;letter-spacing:-0.03em;">65</span>
+          </div>
+          <span style="font-family:var(--sans);font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;">six five <span style="color:var(--gold);">apps</span></span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#how">How It Works</a>
+        <a href="#demos">Demos</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn outline" href="#demos">See Demos</a>
+        <a class="btn gold" href="#contact">Schedule a Demo</a>
+        <a class="btn gold nav-mobile-btn" href="#contact">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="hero-tag fade-up d1">📍 Digital Hubs for Local Business</div>
+          <h1 class="fade-up d2">Your business,<br><em>easy to find.</em><br>Easy to choose.</h1>
+          <p class="hero-sub fade-up d3">
+            When someone's ready to call, book, or walk through your door — the last thing you want is for them to hit a dead end. 65 Apps builds managed digital hubs that put the right information right in front of them, right when it matters.
+          </p>
+          <div class="hero-actions fade-up d4">
+            <a class="btn primary" href="#contact">Schedule a Demo</a>
+            <a class="btn outline" href="#demos">View Live Demos</a>
+          </div>
+          <p class="hero-note fade-up d5">Built for restaurants and home service businesses.</p>
+        </div>
+
+        <div class="hero-visual fade-up d3" aria-hidden="true">
+          <!-- Guest Hub card -->
+          <div class="hub-card c1">
+            <div class="hc-header restaurant">
+              <div class="hc-label">Guest Hub</div>
+              <div class="hc-name">Copper Fork</div>
+              <div class="hc-sub">Modern American · Las Vegas, NV</div>
+            </div>
+            <div class="hc-tabs">
+              <div class="hc-tab active">Home</div>
+              <div class="hc-tab">Menu</div>
+              <div class="hc-tab">New</div>
+            </div>
+            <div class="hc-body">
+              <div class="hc-btn"></div>
+              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
+              <div class="hc-tags">
+                <span class="hc-tag">🍸 Full Bar</span>
+                <span class="hc-tag">☀️ Patio</span>
+                <span class="hc-tag">🎵 Live Music</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Booking Hub card -->
+          <div class="hub-card c2">
+            <div class="hc-header homeservice">
+              <div class="hc-label">Booking Hub</div>
+              <div class="hc-name">Cornerstone Home Services</div>
+              <div class="hc-sub">Las Vegas Valley</div>
+            </div>
+            <div class="hc-tabs">
+              <div class="hc-tab active">Home</div>
+              <div class="hc-tab">Services</div>
+              <div class="hc-tab">Reviews</div>
+            </div>
+            <div class="hc-body">
+              <div class="hc-btn blue"></div>
+              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
+              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
+            </div>
+          </div>
+
+          <!-- Menu card -->
+          <div class="hub-card c3">
+            <div class="hc-header restaurant">
+              <div class="hc-label">Guest Hub · Menu</div>
+              <div class="hc-name">Copper Fork</div>
+              <div class="hc-sub">Tap any item for full details</div>
+            </div>
+            <div class="hc-tabs">
+              <div class="hc-tab">Home</div>
+              <div class="hc-tab active">Menu</div>
+              <div class="hc-tab">New</div>
+            </div>
+            <div class="hc-body">
+              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
+              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
+              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="who" id="products">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Two products. Two industries.</div>
+          <h2>Built specifically for who you're selling to.</h2>
+          <p class="section-sub">Generic digital cards are fine for anyone. These hubs are built for the specific information your customers need — before they decide, before they call, before they book.</p>
+        </div>
+
+        <div class="who-grid">
+          <div class="who-card restaurant">
+            <span class="who-card-emoji">🍽️</span>
+            <div class="who-card-sub">For Restaurants</div>
+            <h3>Guest Hub</h3>
+            <p>A mobile-first guest experience with everything a diner needs to decide, act, and come back. Not a PDF menu. Not a link to Yelp. A real, purpose-built hub for your guests.</p>
+            <ul class="who-features">
+              <li>Contact, hours, and one-tap actions</li>
+              <li>Real browsable menu — not a PDF</li>
+              <li>What's New feed with opt-in for updates</li>
+              <li>Clean Instagram embed, no platform noise</li>
+            </ul>
+            <a class="btn white" href="#demos" style="width:fit-content;">See the Demo →</a>
+          </div>
+
+          <div class="who-card homeservice">
+            <span class="who-card-emoji">🔧</span>
+            <div class="who-card-sub">For Home Services</div>
+            <h3>Booking Hub</h3>
+            <p>A professional hub that builds trust before the first call. Because homeowners aren't just hiring a company — they're deciding who to let through the front door.</p>
+            <ul class="who-features">
+              <li>Contact, service area, and availability</li>
+              <li>Full services menu with descriptions & pricing</li>
+              <li>Testimonials, tips, and Google review CTA</li>
+              <li>Before & after gallery of completed work</li>
+            </ul>
+            <a class="btn white" href="#demos" style="width:fit-content;">See the Demo →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="inside">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">What's inside</div>
+          <h2>Four pages. Everything they need.</h2>
+          <p class="section-sub">Each hub is built around the specific decisions your customers make. No filler, no friction — just the right information at the right moment.</p>
+        </div>
+
+        <div class="inside-tabs" style="margin-top:32px;">
+          <button class="inside-tab active restaurant" data-panel="gh">🍽️ Guest Hub</button>
+          <button class="inside-tab homeservice" data-panel="bh">🔧 Booking Hub</button>
+        </div>
+
+        <div class="inside-panels">
+
+          <!-- GUEST HUB PANEL -->
+          <div class="inside-panel active" id="panel-gh">
+            <div class="pages-list">
+              <div class="page-item">
+                <div class="page-icon">🏠</div>
+                <div class="page-info">
+                  <h4>Home — Everything to Act Right Now</h4>
+                  <p>One-tap call, reservations, online order, directions, and website. Hours with today highlighted. Full contact info. Amenity tags so guests know what to expect before they arrive.</p>
+                </div>
+              </div>
+              <div class="page-item">
+                <div class="page-icon">🍽️</div>
+                <div class="page-info">
+                  <h4>Menu — A Real Mobile Menu</h4>
+                  <p>Organized by category with a clean dropdown. Tap any item for the full description, details, and allergen info. No pinching, no zooming, no PDF that breaks on a phone.</p>
+                </div>
+              </div>
+              <div class="page-item">
+                <div class="page-icon">📣</div>
+                <div class="page-info">
+                  <h4>What's New — Your Built-In Newsletter</h4>
+                  <p>Specials, events, featured dishes, and updates — all in one feed. Guests opt in with their email. You send a one-line teaser with a link back. They return every time. No newsletter platform needed.</p>
+                </div>
+              </div>
+              <div class="page-item">
+                <div class="page-icon">📸</div>
+                <div class="page-info">
+                  <h4>Instagram — Clean Feed, No Distractions</h4>
+                  <p>Your recent posts displayed without the noise of the social platform. They see your food, your vibe, your people — and nothing else competing for their attention.</p>
+                </div>
+              </div>
+            </div>
+            <div class="inside-visual">
+              <div class="mock-device">
+                <div class="mock-screen restaurant-bg">
+                  <div class="ms-top restaurant">
+                    <strong>Copper Fork</strong>
+                    <span>Guest Hub · Las Vegas, NV</span>
+                  </div>
+                  <div class="ms-nav">
+                    <span class="active">Home</span>
+                    <span>Menu</span>
+                    <span>New</span>
+                    <span>Social</span>
+                  </div>
+                  <div class="ms-body">
+                    <div class="ms-alert">Open Now · 4.7 ★ · Leave a Review</div>
+                    <div class="ms-grid">
+                      <div class="ms-action full">📞 Call — (702) 555-1906</div>
+                      <div class="ms-action">📅 Reserve</div>
+                      <div class="ms-action">🛵 Order</div>
+                      <div class="ms-action">📍 Directions</div>
+                      <div class="ms-action">🌐 Website</div>
+                    </div>
+                    <div class="ms-tile"><strong>🍽️ June Featured</strong>Grilled Swordfish with Mango Salsa — summer menu</div>
+                    <div class="ms-tile"><strong>🎉 Coming Up</strong>Father's Day Brunch · Wine Night · Patio open</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOOKING HUB PANEL -->
+          <div class="inside-panel" id="panel-bh">
+            <div class="pages-list">
+              <div class="page-item">
+                <div class="page-icon">🏠</div>
+                <div class="page-info">
+                  <h4>Home — Contact & About</h4>
+                  <p>Direct call and text buttons. Office line, email, address, and service area. Availability with today highlighted. An "About" section that puts a face and a story to the name — because homeowners want to know who's coming over.</p>
+                </div>
+              </div>
+              <div class="page-item">
+                <div class="page-icon">🔧</div>
+                <div class="page-info">
+                  <h4>Services — A Menu for What You Do</h4>
+                  <p>Organized by category with a dropdown. Tap any service for a full description and starting price. Pricing transparency removes the hesitation before they call.</p>
+                </div>
+              </div>
+              <div class="page-item">
+                <div class="page-icon">⭐</div>
+                <div class="page-info">
+                  <h4>Reviews & Tips — Trust on One Page</h4>
+                  <p>A Google review CTA at the top. Real client testimonials with specific jobs. Homeowner tips that position you as the expert — and keep the hub worth revisiting.</p>
+                </div>
+              </div>
+              <div class="page-item">
+                <div class="page-icon">📸</div>
+                <div class="page-info">
+                  <h4>Gallery — Show the Work</h4>
+                  <p>Photo gallery of completed projects. Optional before & after slider so homeowners can see the transformation firsthand. The proof that closes the deal.</p>
+                </div>
+              </div>
+            </div>
+            <div class="inside-visual">
+              <div class="mock-device">
+                <div class="mock-screen">
+                  <div class="ms-top homeservice">
+                    <strong>Cornerstone Home Services</strong>
+                    <span>Booking Hub · Las Vegas, NV</span>
+                  </div>
+                  <div class="ms-nav">
+                    <span class="active">Home</span>
+                    <span>Services</span>
+                    <span>Reviews</span>
+                    <span>Gallery</span>
+                  </div>
+                  <div class="ms-body">
+                    <div class="ms-alert blue">Mon–Fri 7AM–6PM · Sat 8AM–3PM</div>
+                    <div class="ms-grid">
+                      <div class="ms-action full blue">📞 Call Mike — (702) 555-0183</div>
+                      <div class="ms-action">💬 Text Mike</div>
+                      <div class="ms-action">✉️ Email</div>
+                      <div class="ms-action">📍 Directions</div>
+                      <div class="ms-action">🌐 Website</div>
+                    </div>
+                    <div class="ms-about">
+                      <div class="ms-avatar">M</div>
+                      <div class="ms-about-lines">
+                        <div style="height:8px;background:rgba(51,110,189,0.15);border-radius:4px;margin-bottom:5px;"></div>
+                        <div style="height:8px;background:rgba(51,110,189,0.1);border-radius:4px;width:70%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MANAGED SERVICE -->
+    <section class="managed">
+      <div class="container managed-inner">
+        <div>
+          <div class="eyebrow" style="color:rgba(184,146,74,0.85);">Fully managed</div>
+          <h2>You run the business.<br><em>We keep the hub current.</em></h2>
+          <p>This isn't a platform you log into and figure out. You fill out a form with your information, we build it, and it goes live. When something changes — hours, a new menu item, a seasonal special — you tell us and we handle it.</p>
+          <p>No new logins. No learning a new tool. No hiring someone to manage it.</p>
+        </div>
+        <div class="managed-points">
+          <div class="managed-point">
+            <div class="managed-point-icon">📋</div>
+            <div class="managed-point-text">
+              <strong>Getting started</strong>
+              <span>Fill out an intake form with your business info. We build and design your hub from that.</span>
+            </div>
+          </div>
+          <div class="managed-point">
+            <div class="managed-point-icon">🔄</div>
+            <div class="managed-point-text">
+              <strong>Making updates</strong>
+              <span>Hours changed? New menu item? Different pricing? Send us the update and it's done.</span>
+            </div>
+          </div>
+          <div class="managed-point">
+            <div class="managed-point-icon">📱</div>
+            <div class="managed-point-text">
+              <strong>Sharing it</strong>
+              <span>Your hub gets a QR code and a shareable link. Put it anywhere — business cards, receipts, signage, email signatures.</span>
+            </div>
+          </div>
+          <div class="managed-point">
+            <div class="managed-point-icon">👥</div>
+            <div class="managed-point-text">
+              <strong>Team sharing</strong>
+              <span>One hub, the whole team. Every employee shares the same link. Key individuals can get their own personal card.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMOS -->
+    <section class="demos" id="demos">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Live demos</div>
+          <h2>See it on your phone. Right now.</h2>
+          <p class="section-sub">These are real builds — not mockups, not screenshots. Open them on your phone and experience what your customers would see. That's the whole point.</p>
+        </div>
+
+        <div class="demos-grid">
+
+          <article class="demo-card">
+            <div class="demo-hero restaurant">
+              <span class="demo-emoji">🍽️</span>
+              <div class="demo-pill">Guest Hub · Restaurant</div>
+              <h3>Copper Fork</h3>
+            </div>
+            <div class="demo-body">
+              <!-- VIDEO PLACEHOLDER: replace with <video> or <img src="gh-demo.gif"> when ready -->
+              <div style="width:100%;aspect-ratio:9/16;max-height:300px;border-radius:var(--radius-sm);background:rgba(31,58,67,0.05);border:2px dashed rgba(31,58,67,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;position:relative;">
+                <div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:800;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,0.85);color:var(--navy);letter-spacing:0.06em;text-transform:uppercase;">📱 Walkthrough</div>
+                <div style="font-size:28px;opacity:0.35;">▶️</div>
+                <div style="font-size:12px;font-weight:700;color:var(--subtle);text-align:center;line-height:1.5;">Demo walkthrough video<br>coming soon</div>
+              </div>
+              <p>A fictional Las Vegas restaurant — built to show exactly what a Guest Hub looks like in the wild. Browse the menu, check out What's New, and see how the whole experience flows on a phone.</p>
+              <ul class="demo-features">
+                <li><span>🏠</span> Home with one-tap actions & amenities</li>
+                <li><span>🍽️</span> Full menu with categories & item detail</li>
+                <li><span>📣</span> What's New with events & specials</li>
+                <li><span>📸</span> Instagram feed embed</li>
+              </ul>
+              <div class="demo-actions">
+                <a class="demo-btn restaurant-btn" href="https://copperfork.myes.app" target="_blank" rel="noopener">View Guest Hub Demo →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-card">
+            <div class="demo-hero homeservice">
+              <span class="demo-emoji">🔧</span>
+              <div class="demo-pill">Booking Hub · Home Services</div>
+              <h3>Cornerstone Home Services</h3>
+            </div>
+            <div class="demo-body">
+              <!-- VIDEO PLACEHOLDER: replace with <video> or <img src="bh-demo.gif"> when ready -->
+              <div style="width:100%;aspect-ratio:9/16;max-height:300px;border-radius:var(--radius-sm);background:rgba(51,110,189,0.05);border:2px dashed rgba(51,110,189,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;position:relative;">
+                <div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:800;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,0.85);color:var(--navy);letter-spacing:0.06em;text-transform:uppercase;">📱 Walkthrough</div>
+                <div style="font-size:28px;opacity:0.35;">▶️</div>
+                <div style="font-size:12px;font-weight:700;color:var(--subtle);text-align:center;line-height:1.5;">Demo walkthrough video<br>coming soon</div>
+              </div>
+              <p>A fictional Las Vegas home services company — built to show what a Booking Hub looks like for a contractor. Browse services, read reviews, and see how trust is built before anyone picks up the phone.</p>
+              <ul class="demo-features">
+                <li><span>🏠</span> Contact, service area & about the owner</li>
+                <li><span>🔧</span> Services with descriptions & pricing</li>
+                <li><span>⭐</span> Reviews, tips & Google review CTA</li>
+                <li><span>📸</span> Project gallery</li>
+              </ul>
+              <div class="demo-actions">
+                <a class="demo-btn homeservice-btn" href="https://mikebanner.myes.app/" target="_blank" rel="noopener">View Booking Hub Demo →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">How it works</div>
+          <h2>From conversation to live in days.</h2>
+          <p class="section-sub">No lengthy onboarding. No back-and-forth for weeks. You give us the information, we do the rest.</p>
+        </div>
+
+        <div class="steps-row">
+          <div class="step">
+            <h4>We have a quick conversation</h4>
+            <p>Tell us about your business — what you do, who you serve, what you want your customers to be able to do. 20 minutes is usually enough.</p>
+          </div>
+          <div class="step">
+            <h4>You fill out the intake form</h4>
+            <p>Hours, contact info, menu or services, photos, links — we send you a form built around your hub. You fill it in at your pace.</p>
+          </div>
+          <div class="step">
+            <h4>We build and deliver</h4>
+            <p>Your hub is built, designed, and tested. We send you a link and a QR code. Most builds are live within a few business days.</p>
+          </div>
+          <div class="step">
+            <h4>You share it everywhere</h4>
+            <p>Business cards, receipts, email signatures, table tents, social bios — anywhere your customers might look, your hub is one tap away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Pricing</div>
+          <h2>Simple pricing.<br>A real reason to start now.</h2>
+          <p class="section-sub">All hubs are fully managed — you submit your content, we handle the build, the design, and every update after that.</p>
+        </div>
+
+        <!-- FOUNDING MEMBER BANNER -->
+        <div style="background:var(--navy);border-radius:var(--radius);padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:36px;margin-bottom:28px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(184,146,74,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">🏅 Founding Member Offer</div>
+            <h3 style="font-family:var(--serif);font-size:22px;color:#fff;letter-spacing:-0.01em;margin-bottom:6px;">Get in early. Lock in the rate — forever.</h3>
+            <p style="font-size:14px;color:rgba(255,255,255,0.62);line-height:1.6;">The first 10 restaurants and home service businesses get a reduced setup fee and a monthly rate that's locked in for as long as they stay active. This isn't a trial discount. It's a thank you for being first.</p>
+          </div>
+          <div style="text-align:center;flex-shrink:0;">
+            <div style="font-family:var(--serif);font-size:56px;color:var(--gold);line-height:1;letter-spacing:-0.03em;">10</div>
+            <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.45);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;">Spots Available</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+          <article class="price-card">
+            <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px;margin-bottom:16px;width:fit-content;background:rgba(31,58,67,0.08);color:var(--restaurant);">🍽️ Guest Hub</div>
+            <h3 style="font-family:var(--serif);font-size:22px;color:var(--navy);margin-bottom:4px;">Restaurant Guest Hub</h3>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5;">For restaurants that want to turn guests into regulars — and regulars into people who bring their friends.</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+              <div style="padding:14px;border-radius:var(--radius-sm);background:var(--off);border:1px solid var(--line);text-align:center;">
+                <div style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:6px;">Setup Fee</div>
+                <div style="font-family:var(--serif);font-size:32px;color:var(--navy);letter-spacing:-0.02em;line-height:1;"><sup style="font-size:16px;vertical-align:top;margin-top:5px;">$</sup>99</div>
+                <div style="font-size:11px;color:var(--subtle);margin-top:4px;text-decoration:line-through;">$149 regular</div>
+              </div>
+              <div style="padding:14px;border-radius:var(--radius-sm);background:var(--off);border:1px solid var(--line);text-align:center;">
+                <div style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:6px;">Monthly</div>
+                <div style="font-family:var(--serif);font-size:32px;color:var(--navy);letter-spacing:-0.02em;line-height:1;"><sup style="font-size:16px;vertical-align:top;margin-top:5px;">$</sup>49<sub style="font-size:13px;font-family:var(--sans);font-weight:500;color:var(--muted);">/mo</sub></div>
+                <div style="font-size:11px;color:var(--subtle);margin-top:4px;text-decoration:line-through;">$79 regular</div>
+              </div>
+            </div>
+
+            <div style="height:1px;background:var(--line);margin:16px 0;"></div>
+
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;font-size:13px;color:var(--ink);margin-bottom:24px;flex:1;">
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Full four-page Guest Hub build</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Up to 40 menu items across 5 categories</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>7 What's New posts + Customer Spotlight at launch</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Up to 4 posts per month — doesn't roll over</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Monthly Home & Table content — we produce it</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Monthly Customer Spotlight — we manage it</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>All updates within 48 hours</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>QR code and shareable link</li>
+            </ul>
+
+            <a class="btn outline" href="#contact" style="width:fit-content;">Claim a Founding Spot</a>
+            <p style="font-size:11px;color:var(--subtle);margin-top:12px;line-height:1.5;">* Annual plan includes 2 branded NFC cards pre-programmed to your hub.</p>
+          </article>
+
+          <article class="price-card featured">
+            <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px;margin-bottom:16px;width:fit-content;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);">🔧 Booking Hub</div>
+            <h3 style="font-family:var(--serif);font-size:22px;color:#fff;margin-bottom:4px;">Home Services Booking Hub</h3>
+            <p style="font-size:13px;color:rgba(255,255,255,0.58);margin-bottom:20px;line-height:1.5;">For contractors who want to look more professional than the competition and get chosen before anyone makes a call.</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+              <div style="padding:14px;border-radius:var(--radius-sm);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);text-align:center;">
+                <div style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Setup Fee</div>
+                <div style="font-family:var(--serif);font-size:32px;color:#fff;letter-spacing:-0.02em;line-height:1;"><sup style="font-size:16px;vertical-align:top;margin-top:5px;">$</sup>99</div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px;text-decoration:line-through;">$149 regular</div>
+              </div>
+              <div style="padding:14px;border-radius:var(--radius-sm);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);text-align:center;">
+                <div style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Monthly</div>
+                <div style="font-family:var(--serif);font-size:32px;color:#fff;letter-spacing:-0.02em;line-height:1;"><sup style="font-size:16px;vertical-align:top;margin-top:5px;">$</sup>49<sub style="font-size:13px;font-family:var(--sans);font-weight:500;color:rgba(255,255,255,0.45);">/mo</sub></div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px;text-decoration:line-through;">$79 regular</div>
+              </div>
+            </div>
+
+            <div style="height:1px;background:rgba(255,255,255,0.1);margin:16px 0;"></div>
+
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;font-size:13px;color:rgba(255,255,255,0.82);margin-bottom:24px;flex:1;">
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Full four-page Booking Hub build</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Up to 40 services across trade categories</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Testimonials, homeowner tips & gallery at launch</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>One new Homeowner Tip added monthly — we write it</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>All updates within 48 hours</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>New testimonials & gallery photos added as you send them</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>QR code and shareable link</li>
+              <li style="display:flex;align-items:flex-start;gap:9px;line-height:1.45;"><span style="color:var(--gold);font-weight:900;flex-shrink:0;">✓</span>Individual cards available for owner, managers & techs</li>
+            </ul>
+
+            <a class="btn white" href="#contact" style="width:fit-content;">Claim a Founding Spot</a>
+            <p style="font-size:11px;color:rgba(255,255,255,0.28);margin-top:12px;line-height:1.5;">* Annual plan includes 2 branded NFC cards pre-programmed to your hub.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Ready to see it<br><em>on your phone?</em></h2>
+            <p>Schedule a short demo. We'll walk you through both hubs, answer every question, and show you exactly what your business would look like. No pressure, no pitch — just a look at what's possible.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn gold" href="#" onclick="alert('Scheduling form coming soon — use the email below for now.')">Schedule a Demo</a>
+            <a class="btn white" href="mailto:info@sixfiveapps.com">✉️ info@sixfiveapps.com</a>
+            <p class="cta-email">Or email us directly at <a href="mailto:info@sixfiveapps.com">info@sixfiveapps.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-logo">six five <span>apps</span></div>
+      <div>Managed Digital Hubs for Restaurants &amp; Home Services</div>
+      <div>© 2026 65 Apps. All rights reserved. · <a href="mailto:info@sixfiveapps.com" style="color:rgba(255,255,255,0.45);">info@sixfiveapps.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switcher for "What's Inside"
+    document.querySelectorAll('.inside-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.inside-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.inside-panel').forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('panel-' + this.dataset.panel).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
