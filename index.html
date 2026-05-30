@@ -243,9 +243,10 @@
     }
 
     /* hero visual */
-    .hero-visual {
-      position: relative;
-      height: 460px;
+    ..hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
     }
     .hub-card {
       position: absolute;
@@ -1066,67 +1067,12 @@
           <p class="hero-note fade-up d5">Built for restaurants and home service businesses.</p>
         </div>
 
-        <div class="hero-visual fade-up d3" aria-hidden="true">
-          <!-- Guest Hub card -->
-          <div class="hub-card c1">
-            <div class="hc-header restaurant">
-              <div class="hc-label">Guest Hub</div>
-              <div class="hc-name">Copper Fork</div>
-              <div class="hc-sub">Modern American · Las Vegas, NV</div>
-            </div>
-            <div class="hc-tabs">
-              <div class="hc-tab active">Home</div>
-              <div class="hc-tab">Menu</div>
-              <div class="hc-tab">New</div>
-            </div>
-            <div class="hc-body">
-              <div class="hc-btn"></div>
-              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
-              <div class="hc-tags">
-                <span class="hc-tag">🍸 Full Bar</span>
-                <span class="hc-tag">☀️ Patio</span>
-                <span class="hc-tag">🎵 Live Music</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Booking Hub card -->
-          <div class="hub-card c2">
-            <div class="hc-header homeservice">
-              <div class="hc-label">Booking Hub</div>
-              <div class="hc-name">Cornerstone Home Services</div>
-              <div class="hc-sub">Las Vegas Valley</div>
-            </div>
-            <div class="hc-tabs">
-              <div class="hc-tab active">Home</div>
-              <div class="hc-tab">Services</div>
-              <div class="hc-tab">Reviews</div>
-            </div>
-            <div class="hc-body">
-              <div class="hc-btn blue"></div>
-              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
-              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
-            </div>
-          </div>
-
-          <!-- Menu card -->
-          <div class="hub-card c3">
-            <div class="hc-header restaurant">
-              <div class="hc-label">Guest Hub · Menu</div>
-              <div class="hc-name">Copper Fork</div>
-              <div class="hc-sub">Tap any item for full details</div>
-            </div>
-            <div class="hc-tabs">
-              <div class="hc-tab">Home</div>
-              <div class="hc-tab active">Menu</div>
-              <div class="hc-tab">New</div>
-            </div>
-            <div class="hc-body">
-              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
-              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
-              <div class="hc-row"><div class="hc-dot"></div><div class="hc-lines"><div class="hc-line"></div><div class="hc-line s"></div></div></div>
-            </div>
-          </div>
+        <div class="hero-visual fade-up d3">
+          <img 
+            src="images/hero-phones.png" 
+            alt="Guest Hub and Booking Hub on mobile"
+            style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto;"
+          >
         </div>
       </div>
     </section>
